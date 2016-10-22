@@ -16,4 +16,8 @@ mail_span		    xpath	//*[@id='zlif__CLV-main__811__su']/span
 textbox_Search     id 		inputValEnter
 btn_search         xpath    //div[@id='sdHeader']//button[contains(@class,'searchformButton')]
 img_firstItem      xpath    (//img[contains(@class,'product-image')])[1]
+
+btn_icon      xpath           //div[@id='add-cart-button-id']/span
+btn_checkOut  xpath           //div[@id='cartProductContainer']//a[text() = 'Proceed To Checkout']
+txt_FirstItem  xpath         (//div[@id='cartModal']//ul/li[contains(@class,'cart-item')])[1]
 ====================================================================================

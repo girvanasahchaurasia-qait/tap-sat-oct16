@@ -34,7 +34,6 @@ public class ProductDetailsActions extends GetPage {
 	public void AddTheProductToCart() {
 		try{
 			changeWindow(1);
-		
 	    element("btn_icon").click();
 	    logMessage("User clicked On Add to cart button");
 	    element("btn_checkOut").click();
