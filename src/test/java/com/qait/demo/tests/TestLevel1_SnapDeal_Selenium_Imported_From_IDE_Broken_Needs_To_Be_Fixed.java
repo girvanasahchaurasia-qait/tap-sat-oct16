@@ -14,14 +14,19 @@
 package com.qait.demo.tests;
 
 import java.util.regex.Pattern;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.*;
+
+
+
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class TestLevel1_SnapDeal_Selenium_Imported_From_IDE_Broken_Needs_To_Be_Fixed {
+public class TestLevel1_SnapDeal_Selenium_Imported_From_IDE_Broken_Needs_To_Be_Fixed
+{
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -37,18 +42,34 @@ public class TestLevel1_SnapDeal_Selenium_Imported_From_IDE_Broken_Needs_To_Be_F
   @Test
   public void testECommerceSite() throws Exception {
     driver.get(baseUrl + "/");
+ 
     driver.findElement(By.id("inputValEnter")).click();
+ 
     driver.findElement(By.id("inputValEnter")).clear();
+ 
     driver.findElement(By.id("inputValEnter")).sendKeys("mobile");
+ 
     driver.findElement(By.xpath("//button[@onclick=\"submitSearchForm('go_header');\"]")).click();
+ 
     driver.findElement(By.xpath("(//img[contains(@class,'product-image')])[1]")).click();
+ 
+    Set<String> windows = driver.getWindowHandles();
+    for(String window : windows)
+    driver.switchTo().window(window);
     driver.findElement(By.xpath("//div[@id='add-cart-button-id']/span")).click();
-    driver.findElement(By.linkText("Proceed To Checkout")).click();
+ 
+    driver.findElement(By.xpath("//div[@id='cartProductContainer']//a[text() = 'Proceed To Checkout']")).click();
+ 
+    driver.findElement(By.xpath("(//img[@title = 'Snapdeal' ])[1]")).click();;
+    driver.findElement(By.xpath("//div[@id='sdHeader']//div[@class='cartInner']/i")).click();
+    driver.findElement(By.xpath("//div[@id='cartModal']//ul/li[contains(@class,'cart-item')]//a[text()='Redmi Note 3 32 GB']"));
+    System.out.println("Mobile is Present in cart");
+    
   }
 
   @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception {
-    driver.quit();
+   // driver.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
