@@ -42,14 +42,15 @@ public class ResultsPageActions extends GetPage {
 
 
 	public void clickFirstProduct() {
-		// TODO Auto-generated method stub
+		element("img_firstItem").click();
+		logMessage("User Clicked on the first item available on the search result");
 		
 	}
 
 
 	public void verifyResults(String yamlValue) {
-		// TODO Auto-generated method stub
-		
+		isElementDisplayed("txt_resultType", yamlValue);
+		logMessage("Result type of serch is " +yamlValue);
 	}
 	
 	

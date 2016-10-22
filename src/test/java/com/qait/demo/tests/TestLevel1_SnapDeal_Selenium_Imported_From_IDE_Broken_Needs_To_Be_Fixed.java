@@ -62,7 +62,7 @@ public class TestLevel1_SnapDeal_Selenium_Imported_From_IDE_Broken_Needs_To_Be_F
  
     driver.findElement(By.xpath("(//img[@title = 'Snapdeal' ])[1]")).click();;
     driver.findElement(By.xpath("//div[@id='sdHeader']//div[@class='cartInner']/i")).click();
-    driver.findElement(By.xpath("//div[@id='cartModal']//ul/li[contains(@class,'cart-item')]//a[text()='Redmi Note 3 32 GB']"));
+    driver.findElement(By.xpath("(//div[@id='cartModal']//ul/li[contains(@class,'cart-item')])[1]"));
     System.out.println("Mobile is Present in cart");
     
   }

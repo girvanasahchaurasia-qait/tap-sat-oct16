@@ -31,7 +31,12 @@ public class CartPageActions extends GetPage {
 	}
 
 	public void verifyCart() {
-		// TODO Auto-generated method stub
+		element("img_home").click();
+		logMessage("User moved to home page");
+		element("icon_cart").click();
+		logMessage("User opened the cart");
+		Assert.assertEquals(isElementDisplayed("list_product"), true);
+		logMessage("Product available in cart");
 		
 	}
 

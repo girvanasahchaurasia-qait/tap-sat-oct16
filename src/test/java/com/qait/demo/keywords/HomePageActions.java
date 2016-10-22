@@ -155,15 +155,18 @@ public class HomePageActions extends GetPage {
 
 	public void enterProductName(String value) {
 		element("textbox_Search").sendKeys(value);
+		logMessage("User entered the value:" +value);
 	}
 
 	public void clickSearchIcon() {
-		// TODO Auto-generated method stub
+		element("btn_search").click();
+		logMessage("User Clicked on Search icon btn");
 		
 	}
 
 	public void clickFirstProduct() {
-		// TODO Auto-generated method stub
+		element("img_firstItem").click();
+		logMessage("User clicked on the first element present in the results");
 		
 	}
 }

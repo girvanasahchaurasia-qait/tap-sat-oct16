@@ -1,5 +1,7 @@
-baseUrl: http://10.0.1.86/tatoc
+baseUrl: https://www.amazon.com
 tatocGameBaseUrl: http://10.0.1.86/tap_classroom/TicTacToe/
+
+productName: Mobile
 
 homePage: 
   searchTerm: QA Infotech

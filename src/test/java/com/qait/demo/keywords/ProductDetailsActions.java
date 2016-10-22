@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,8 +32,14 @@ public class ProductDetailsActions extends GetPage {
 	}
 
 	public void AddTheProductToCart() {
-		// TODO Auto-generated method stub
+		try{
+			changeWindow(1);
 		
+	    element("btn_icon").click();
+	    logMessage("User clicked On Add to cart button");
+	    element("btn_checkOut").click();
+	    logMessage("User clicked on Checkout button");
+	}catch(Exception ex){}
 	}
 
 }

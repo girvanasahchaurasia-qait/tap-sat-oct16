@@ -8,6 +8,7 @@ import static com.qait.automation.getpageobjects.ObjectFileReader.getPageTitleFr
 import static com.qait.automation.utils.ConfigPropertyReader.getProperty;
 
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -83,6 +84,34 @@ public class BaseUi {
 		}
 	}
 
+	
+	public void changeWindow(int i) throws InterruptedException {
+		Thread.sleep(1000);
+		Set<String> windows = driver.getWindowHandles();
+		if (i > 0) {
+			for (int j = 0; j < 9; j++) {
+				System.out.println("Windows: " + windows.size());
+				Thread.sleep(1000);
+				if (windows.size() >= 2) {
+					try {
+						Thread.sleep(5000);
+					} catch (Exception ex) {
+						ex.printStackTrace();
+					}
+					break;
+				}
+				windows = driver.getWindowHandles();
+			}
+		}
+		String wins[] = windows.toArray(new String[windows.size()]);
+		driver.switchTo().window(wins[i]);
+		Thread.sleep(1000);
+		
+		System.out.println("Title: "
+				+ driver.switchTo().window(wins[i]).getTitle());
+	}
+	
+	
 	/**
 	 * Verification of the page title with the title text provided in the page
 	 * object repository

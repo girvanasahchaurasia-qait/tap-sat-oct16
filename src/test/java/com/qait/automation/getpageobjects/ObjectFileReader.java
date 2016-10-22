@@ -3,6 +3,7 @@ package com.qait.automation.getpageobjects;
 import static com.qait.automation.utils.ConfigPropertyReader.getProperty;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class ObjectFileReader {
 			String elementName) {
 		setTier();
 		try {
-			FileReader specFile = new FileReader(filepath + tier + pageName + ".spec");
+			FileReader specFile = new FileReader(filepath +File.separator +tier + File.separator + pageName + ".spec");
 			return getElement(specFile, elementName);
 		} catch (Exception e) {
 			e.printStackTrace();
