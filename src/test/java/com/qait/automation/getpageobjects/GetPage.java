@@ -182,7 +182,7 @@ public class GetPage extends BaseUi {
 
     protected By getLocator(String elementToken, String replacement) {
         String[] locator = getELementFromFile(this.pageName, elementToken);
-        locator[1] = locator[1].replaceAll("\\$\\{.+\\}", replacement);
+        locator[2] = locator[2].replaceAll("\\$\\{.+\\}", replacement);
         return getBy(locator[1].trim(), locator[2].trim());
     }
 
